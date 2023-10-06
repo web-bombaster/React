@@ -1,0 +1,139 @@
+@import "vars";
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+
+	margin-top: 24px;
+	padding: 16px 24px;
+
+	font-family: 'Calibri';
+	font-size: 18px;
+	color: #fff;
+	line-height: 1.11;
+	font-weight: 700;
+	text-decoration: none;
+
+	background-color: var(--color-accent);
+	border-radius: var(--brs);
+	border: none;
+
+	transition: background-color .25s, color .25s, transform .25s;
+	cursor: pointer;
+
+	@media (max-width: $b1200) {
+		padding: 16px 24px;
+		font-size: 16px;
+		line-height: 1.12;
+	}
+
+	@media (max-width: $b992) {
+		padding: 16px 24px;
+		font-size: 16px;
+		line-height: 1.12;
+	}
+
+	@media (max-width: $b768) {
+		padding: 17px 16px;
+		font-size: 14px;
+		line-height: 1.14;
+	}
+
+	@media (max-width: $b480) {
+		flex-grow: 1;
+
+		padding: 8px 12px;
+		font-size: 14px;
+		line-height: 1.14;
+
+		border-radius: 8px;
+	}
+
+	@media (max-width: $b480) {
+		padding: 17px 10px;
+		font-size: 12px;
+		line-height: 1.17;
+	}
+}
+
+.btn__light {
+	background-color: #fff;
+	color: var(--color-text);
+}
+
+.btn__dark {
+	background-color: var(--color-text);
+	color: #fff;
+}
+
+.btn__arrow {
+    position: relative;
+    padding: 0;
+
+    margin-top: auto;
+
+    width: 36px;
+    height: 36px;
+
+
+    background-color: #fff;
+    border-radius: var(--brs);
+
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 28px;
+        height: 18px;
+    }
+
+	&.btn {
+		padding: 0;
+	}
+}
+
+.btn:hover {
+	transform: translateY(-2px);
+}
+
+.btn:hover:not(:disabled) {
+	// background-color: #A3DA37;
+}
+
+.btn:focus {
+	// background-color: #A3DA37;
+}
+
+.btn:disabled {
+	opacity: 0.4;
+}
+
+.btn-arrow {
+	display: inline-block;
+
+	height: 48px;
+	width: 150px;
+	
+	color: #fff;
+
+	background-color: #2C2C2C;
+	border: none;
+
+	// background-image: url('../img/arrow-white.svg');
+	// background-image: url('./../img/arrow-white.svg');
+	background-size: 45px 16px;
+	background-position: center;
+	background-repeat: no-repeat;
+
+	cursor: pointer;
+
+	transition: .25s;
+
+	&:hover {
+		background-color: #FF7043;
+	}
+}

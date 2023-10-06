@@ -1,0 +1,36 @@
+.button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #ff4545;
+
+  font-size: 16px;
+  font-family: Calibri;
+  font-weight: 700;
+  line-height: 18px;
+  width: 100%;
+
+  height: 50px;
+
+  transition: 0.25s;
+  h6 {
+    display: flex;
+    align-items: center;
+    color: #fff;
+  }
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &_white {
+    background-color: #fff;
+    color: #3e3e40;
+  }
+}
