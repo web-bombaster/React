@@ -1,0 +1,75 @@
+@use "sass:math";
+
+@import "./../../../scss/_mixins/mixins";
+@import "./../../../scss/fonts";
+@import "./../../../scss/_vars";
+
+.footer_col__title {
+    display: block;
+    margin-bottom: 16px;
+    @include h5;
+
+    @media screen and (max-width: 600px) {
+        margin-bottom: 0;
+        padding-top: 17px;
+        padding-bottom: 17px;
+
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 36px;
+            height: 36px;
+            content: '';
+            transform: translateY(-50%);
+            background-image: url('./../../../img/icons/triangle.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 16px 16px;
+            filter: brightness(0) invert(1);
+        }
+
+        &.active {
+            &::before {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+}
+
+.footer_col__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    transition: height .25s, max-height .25s;
+
+    @media screen and (max-width: 600px) {
+        height: 0;
+        overflow: hidden;
+
+        &.active {
+            display: flex;
+            padding-left: 16px;
+            padding-bottom: 16px;
+
+            height: auto;
+        }
+    }
+}
+.footer_col__links_item {
+    color: #fff;
+    line-height: 1.125;
+
+    transition: transform .25s;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    .footer_col__links__bold & {
+        @include h5;
+    }
+}

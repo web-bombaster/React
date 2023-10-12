@@ -1,0 +1,35 @@
+@import "./../../../scss/_mixins/mixins";
+@import "./../../../scss/vars";
+
+.footer_col__links__bold {
+    margin-bottom: 44px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    max-width: 300px;
+
+    @media screen and (max-width: 600px) {
+        padding-top: 17px;
+    }
+
+    @media screen and (max-width: 480px) {
+        margin-bottom: 18px;
+    }
+}
+
+.footer_col__links_item {
+    color: #fff;
+    line-height: 1.125;
+
+    transition: transform .25s;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    .footer_col__links__bold & {
+        @include h5;
+    }
+}

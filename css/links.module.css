@@ -1,0 +1,154 @@
+@font-face {
+  font-family: "Bliss Pro";
+  src: local("Bliss Pro"), local("Bliss-Pro"), url("../fonts/BlissPro-Light.woff2") format("woff2"), url("../fonts/BlissPro-Light.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bliss Pro";
+  src: local("Bliss Pro"), local("Bliss-Pro"), url("../fonts/BlissPro-Medium.woff2") format("woff2"), url("../fonts/BlissPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bliss Pro";
+  src: local("Bliss Pro"), local("Bliss-Pro"), url("../fonts/BlissPro-Bold.woff2") format("woff2"), url("../fonts/BlissPro-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bliss Pro";
+  src: local("Bliss Pro"), local("Bliss-Pro"), url("../fonts/BlissPro-ExtraBold.woff2") format("woff2"), url("../fonts/BlissPro-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bliss Pro";
+  src: local("Bliss Pro"), local("Bliss-Pro"), url("../fonts/BlissPro-Heavy.woff2") format("woff2"), url("../fonts/BlissPro-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Calibri";
+  src: local("Calibri Bold"), local("Calibri-Bold"), url("../fonts/Calibri-Bold.woff2") format("woff2"), url("../fonts/Calibri-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --color-text: #3E3E40;
+  --color-main: #0265C2;
+  --color-accent: #FF4545;
+  --color-gray-01: #F4F4F4;
+  --color-gray-02: #B4B4B4;
+  --color-gray-03: #EAEAEA;
+  --font-family: "Bliss Pro", sans-serif;
+  --font-family-accent: "Bliss Pro", sans-serif;
+  --indexRatio: 1vh + 1vw;
+  --brs: 8px;
+  --brs-grid: 16px;
+  --mainGap: 24px;
+  --indentBlocks: 60px;
+  --heroMinCol: calc(100% / 5 - 3 / 4 * var(--mainGap));
+  --heroMaxCol: calc((100% - var(--heroMinCol) - 3 / 4 * var(--mainGap)) / 3);
+}
+@media (max-width: 768px) {
+  :root {
+    --mainGap: 16px;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --indentBlocks: 60px;
+  }
+}
+@media (max-width: 480px) {
+  :root {
+    --indentBlocks: 32px;
+  }
+}
+
+.footer_col__title {
+  display: block;
+  margin-bottom: 16px;
+  font-family: "Calibri";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11111;
+}
+@media (max-width: 480px) {
+  .footer_col__title {
+    font-size: 16px;
+    line-height: 1.12;
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer_col__title {
+    margin-bottom: 0;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    position: relative;
+  }
+  .footer_col__title::before {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    content: "";
+    transform: translateY(-50%);
+    background-image: url("./../../../img/icons/triangle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    filter: brightness(0) invert(1);
+  }
+  .footer_col__title.active::before {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+.footer_col__links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: height 0.25s, max-height 0.25s;
+}
+@media screen and (max-width: 600px) {
+  .footer_col__links {
+    height: 0;
+    overflow: hidden;
+  }
+  .footer_col__links.active {
+    display: flex;
+    padding-left: 16px;
+    padding-bottom: 16px;
+    height: auto;
+  }
+}
+
+.footer_col__links_item {
+  color: #fff;
+  line-height: 1.125;
+  transition: transform 0.25s;
+}
+.footer_col__links_item:hover {
+  transform: translateY(-2px);
+}
+.footer_col__links__bold .footer_col__links_item {
+  font-family: "Calibri";
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11111;
+}
+@media (max-width: 480px) {
+  .footer_col__links__bold .footer_col__links_item {
+    font-size: 16px;
+    line-height: 1.12;
+  }
+}

@@ -1,0 +1,104 @@
+@use "sass:math";
+
+@import "./../../../scss/_mixins/mixins";
+@import "./../../../scss/fonts";
+@import "./../../../scss/vars";
+
+.footer_bottom__col {
+    max-width: 326px;
+
+    @media screen and (max-width: 600px) {
+        max-width: 100%;
+    }
+}
+
+.footer_rehau {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    gap: 16px;
+    align-items: center;
+
+    @include caption;
+
+    @media screen and (max-width: 768px) {
+        grid-template-rows: auto auto auto;
+        grid-template-columns: auto;
+    }
+}
+.footer_rehau__logo {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    position: relative;
+    width: 72px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+
+    img {
+        margin-top: -8px;
+        @include img-abs;
+
+        @media screen and (max-width: 768px) {
+            margin-top: 0;
+        }
+    }
+}
+.footer_rehau__descr {
+    margin: 0;
+    margin-top: -8px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    @media screen and (max-width: 768px) {
+        margin-top: 0;
+    }
+}
+.footer_rehau__link {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+
+    color: #fff;
+    font-size: 0;
+
+    transition: transform .25s;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    @media screen and (max-width: 768px) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        height: 50px;
+        
+        @include h6;
+        color: #151515;
+
+        background-color: #fff;
+        border-radius: 8px;
+
+
+    }
+}
+.footer_rehau__qr {
+    position: relative;
+    height: 80px;
+    width: 80px;
+
+    @media screen and (max-width: 768px) {
+        filter: brightness(0) invert(0);
+        height: 16px;
+        width: 16px;
+    }
+
+    img {
+        @include img-abs;
+    }
+}

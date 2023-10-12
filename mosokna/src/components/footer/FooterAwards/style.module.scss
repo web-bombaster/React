@@ -1,0 +1,42 @@
+@use "sass:math";
+
+@import "./../../../scss/_mixins/mixins";
+@import "./../../../scss/fonts";
+@import "./../../../scss/vars";
+
+.footer_awards {
+    @include h5;
+
+    @include resetFirstLastMargin;
+}
+.footer_awards__list {
+    display: flex;
+    gap: 30px;
+
+    @media screen and (max-width: 992px) {
+        justify-content: space-between;
+        gap: initial;
+    }
+
+    @media screen and (max-width: 600px) {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(2, 1fr);
+        justify-content: space-between;    
+        gap: 16px 0;
+    }
+}
+.footer_awards__list_item {
+    position: relative;
+    height: 59px;
+    width: 79px;
+
+    @media screen and (max-width: 768px) {
+        width: 66.95px;
+        height: 50px;
+    }
+
+    img {
+        @include img-abs;
+    }
+}
